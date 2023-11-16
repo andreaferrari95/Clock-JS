@@ -232,17 +232,17 @@
         margin-right: 2rem;
         font-size: 2rem;
     }
-}
-
-.container::before,
-.container-2::before{
+    .container::before,
+    .container-2::before{
     width: 100px;
     height: 100px;
     left: -10px;
-}
-.container::after,
-.container-2::after{
+    }
+    .container::after,
+    .container-2::after{
     width: 100px;
     height: 100px;
     right: -10px;
 }
+}
+
