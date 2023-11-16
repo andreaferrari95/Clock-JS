@@ -33,6 +33,7 @@
     top: 30%;
     left: 50%;
     transform:translate(-50%, -50%);
+    z-index: 1;
 }
 
 .date-container {
@@ -45,7 +46,12 @@
     backdrop-filter: blur(40px);
     border-radius: 25px;
     box-shadow: var(--font-neon-text-shadow);
-    gap: 2rem;
+    gap: 1rem;
+}
+
+#day {
+    margin-right: 5rem;
+    font-size: 3rem;
 }
 
 .container-2::before {
@@ -81,14 +87,24 @@
     position: relative;
 }
 
-.date span::after {
+.date-container span::after {
     font-size: 16px;
     position: absolute;
-    bottom: -15px;
+    bottom: -25px;
     left: 50%;
     transform: translateX(-50%);
 }
+#date::after {
+    content: 'DAY';
+}
 
+#month::after {
+    content: 'MONTH';
+}
+
+#year::after {
+    content: 'YEAR';
+}
 
 
 /* Time */
@@ -148,6 +164,8 @@
     box-shadow: var(--font-neon-text-shadow);
 }
 
+
+
 .clock span {
     font-size: 80px;
     width: 110px;
@@ -160,7 +178,7 @@
 .clock span::after {
     font-size: 16px;
     position: absolute;
-    bottom: -15px;
+    bottom: -20px;
     left: 50%;
     transform: translateX(-50%);
 }
@@ -175,4 +193,56 @@
 
 #sec::after {
     content: 'SECONDS';
+}
+
+@media (max-width: 810px) {
+    .container-2, .container {
+        width: 100%;
+        max-width: 600px;
+        height: 8rem;
+    }
+
+    .clock span {
+        font-size: 4rem;
+        width: 100%;
+    }
+    
+
+    .date-container span {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .container-2, .container {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .clock span {
+        font-size: 40px;
+        width: 100%;
+    }
+
+    .date-container span {
+        font-size: 1.5rem;
+    }
+
+    #day {
+        margin-right: 2rem;
+        font-size: 2rem;
+    }
+}
+
+.container::before,
+.container-2::before{
+    width: 100px;
+    height: 100px;
+    left: -10px;
+}
+.container::after,
+.container-2::after{
+    width: 100px;
+    height: 100px;
+    right: -10px;
 }
